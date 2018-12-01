@@ -1,9 +1,13 @@
 <?php
 
 include('controllers/HtmlPaint.php');
+include('controllers/Values.php');
+
+$values = new Values();
 
 $hp = new HtmlPaint();
-$paint = $hp->init();
+
+
 
 ?>
 
@@ -17,23 +21,24 @@ $paint = $hp->init();
   <body>
     <section>
       <header>
-          <h2><?php echo $paint; ?></h2>
+          <h2><?php echo "Header Title"; ?></h2>
       </header>
       <main>
           <div class="layout">
               <div class="TE">
                 <ul class="menu">
-                  <li><a class="btn" href="#">Important</a></li>
-                  <li><a class="btn" href="#">Imagine</a></li>
-                  <li><a class="btn" href="#">Emphasis</a></li>
-                  <li><a class="btn" href="#">Cultivate</a></li>
+                  <?php
+                  $links = $values->getNavigationValues();
+                  echo $hp->prettyLinks($links);
+                  ?>
                 </ul>
               </div>
-              <div class="NV"  style="max-height: 230px;">
+              <div class="NV"  style="">
                 <div style="max-height: 200px;">
-                  <div class="frost" style="max-height: 200px;">
-                    <div style="padding: 1em; margin: 1em;">
-                      <h1>Flexible Occasion</h1>
+                  <div class="frost">
+                    <h1>Flexible Occasion</h1>
+                    <div id="post">
+
                       <p>Looking down into the dark gulf below, I could see a ruddy light streaming through a rift in the clouds.</p>
 
                     </div>
@@ -43,16 +48,16 @@ $paint = $hp->init();
               <div class="AE">
                 <h2></h2>
                 <ul class="menu">
-                  <li><a class="btn" href="#">Personality</a></li>
-                  <li><a class="btn" href="#">Accumulation</a></li>
-                  <li><a class="btn" href="#">Sensitivity</a></li>
-                  <li><a class="btn" href="#">Civilization</a></li>
+                  <?php
+                  $menu = $values->getMenuValues();
+                  echo $hp->prettyMenu($menu);
+                  ?>
                 </ul>
               </div>
               <div class="MN">
 
                 <div class="frost" style=" ">
-                  <div style="padding: 1em; margin: 1em;">
+                  <div>
 
                     <p>Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle. By the same illusion which lifts the horizon of the sea to the level of the spectator on a hillside, the sable cloud beneath was dished out, and the car seemed to float in the middle of an immense dark sphere, whose upper half was strewn with silver. Looking down into the dark gulf below, I could see a ruddy light streaming through a rift in the clouds.</p>
 

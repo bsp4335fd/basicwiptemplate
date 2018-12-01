@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600i&subset=greek,greek-ext');
 
 :root{
-  --el-bg-color: #eef;
+  --el-bg-color: #ddd;
   --el-fg-color: #922;
   --header-bg-color: darkgreen;
   --header-fg-color: white;
@@ -34,7 +34,6 @@ header {
 
 main {
   background: whitesmoke;
-  color: #922;
   padding: 0;
 }
 
@@ -44,11 +43,10 @@ main {
   margin: 0 auto;
   padding: 0px;
   background: --el-fg-color;
-  background-image: url(images/decor-800x.jpg);
+  background-image: url(images/greenbark111.jpg);
   /* grid styles */
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
   grid-template-areas:
                         "TE NV NV NV"
                         "AE MN MN MN";
@@ -66,7 +64,6 @@ main {
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(4, 1fr);
     grid-template-areas:
                           "TE TE"
                           "NV NV"
@@ -79,6 +76,9 @@ main {
 .NV{
   grid-area: NV;
   background-repeat: repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .TE{
@@ -90,12 +90,15 @@ main {
 .AE{
   grid-area: AE;
   background: var(--el-bg-color);
+
 }
 
 .MN{
 
   grid-area: MN;
   background: var(--el-bg-color);
+
+  background-image: url(images/bglines.jpg);
 }
 
 footer {
@@ -157,4 +160,8 @@ ul.menu {
 }
 .content-container {
 
+}
+
+#post {
+  text-align: left;
 }
